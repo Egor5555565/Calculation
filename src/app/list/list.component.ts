@@ -26,5 +26,4 @@ brews: Object;
     change(increased:any) {
         this.onChanged.emit(increased);
     }
-
 }
