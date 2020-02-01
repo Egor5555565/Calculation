@@ -1,6 +1,10 @@
 <div class="center-align">
 	<h1>{{name_parent_page}}</h1>
 </div>
+<div class="for_button">
+	<button (click)="change(true)">+</button>
+	<button (click)="change(false)">-</button>
+</div>
 <ul *ngIf="brews">
   <li *ngFor="let brew of brews">
     <p class="name">{{ brew.name }}</p>

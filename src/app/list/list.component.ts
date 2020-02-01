@@ -1,4 +1,4 @@
-import { Input, Component, OnInit } from '@angular/core';
+import { Input, Output, EventEmitter, Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -22,5 +22,9 @@ brews: Object;
   }
 
   @Input() name_parent_page: string = "Breweries";
+  @Output() onChanged = new EventEmitter<boolean>();
+    change(increased:any) {
+        this.onChanged.emit(increased);
+    }
 
 }

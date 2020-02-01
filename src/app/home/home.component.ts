@@ -28,4 +28,10 @@ name_child_pages : string = "Breweries!";
     return myClasses;
   }
 
+  onChanged(increased:any){
+    //increased == true ? this.clickCounter++: this.clickCounter--;
+    //((increased) && (this.clickCounter >= 0)) ? this.clickCounter++ : (this.clickCounter != 0) ? this.clickCounter-- : "123";
+    increased == (true && (this.clickCounter >= 0)) ? this.clickCounter++ : (this.clickCounter != 0) ? this.clickCounter-- : "123";
+  }
+
 }
