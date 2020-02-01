@@ -1,37 +1,39 @@
-<h1>Welcome!</h1>
+<body>
+    <h1>Welcome!</h1>
+    <!--
+        <div class="play-container" [style.background-color]="clickCounter > 4 ? 'yellow' : 'lightgray'"> 
 
-<!--<div class="play-container" [style.background-color]="clickCounter > 4 ? 'yellow' : 'lightgray'"> 
+    	<div class="play-container" [ngStyle]="{
+    		'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
+    		'border':           clickCounter > 4 ? '4px solid black' : 'none'}
+    		">
 
-	<div class="play-container" [ngStyle]="{
-		'background-color': clickCounter > 4 ? 'yellow' : 'lightgray',
-		'border':           clickCounter > 4 ? '4px solid black' : 'none'}
-		">
+    	<div class="play-container" [class.active]="clickCounter > 4">
+    -->
+    <div class="play-container" [ngClass]="setClasses()">
+        <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
+         <p>
+            <input type="text" [(ngModel)]="name"> <br>
+            <strong>You said: </strong>{{ name }} <br>
 
-	<div class="play-container" [class.active]="clickCounter > 4">
--->
-<div class="play-container" [ngClass]="setClasses()">
-    <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
-     <p>
-        <input type="text" [(ngModel)]="name"> <br>
-        <strong>You said: </strong>{{ name }} <br>
+            <strong> Change </strong> {{ name_child_pages }} <br>
+            <input type="text" [(ngModel)]="name_child_pages"/> <br>
 
-        <strong> Change </strong> {{ name_child_pages }} <br>
-        <input type="text" [(ngModel)]="name_child_pages"/> <br>
+            <strong> Change </strong> {{ nameTest }} <br>
+            <input type="text" [(ngModel)]="nameTest"/>
+        </p>
 
-        <strong> Change </strong> {{ nameTest }} <br>
-        <input type="text" [(ngModel)]="nameTest"/>
-    </p>
+        <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+            <p>The click counter <strong>IS GREATER</strong> than 4.</p>
+        </ng-template>
 
-    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
-        <p>The click counter <strong>IS GREATER</strong> than 4.</p>
-    </ng-template>
+        <ng-template #none>
+            <p>The click counter is <strong>not greater</strong> than 4.</p>
+        </ng-template>
 
-    <ng-template #none>
-        <p>The click counter is <strong>not greater</strong> than 4.</p>
-    </ng-template>
+    </div>
 
-</div>
-
-<div>Выбранное имя: {{nameTest}}</div>
-<app-list [name_parent_page]="name_child_pages" (onChangedTest)="onChanged($event)" [(userNameTest)]="nameTest"></app-list>
+    <div>Выбранное имя: {{nameTest}}</div>
+    <app-list [name_parent_page]="name_child_pages" (onChangedTest)="onChanged($event)" [(userNameTest)]="nameTest"></app-list>
+</body>
 
