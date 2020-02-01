@@ -30,4 +30,8 @@ ul > li > p {
     font-size: .9rem;
     flex-grow: 1;
 }
-    
+
+.center-align{
+    text-align:center
+    }
+

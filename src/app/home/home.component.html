@@ -13,7 +13,9 @@
     <p>You've clicked <span (click)="countClick()">this</span> {{ clickCounter }} times.</p>
      <p>
         <input type="text" [(ngModel)]="name"><br>
-        <strong>You said: </strong> {{ name }}
+        <strong>You said: </strong><br>{{ name }}
+        <strong> Change </strong> {{ name_child_pages }}
+        <input type="text" [(ngModel)]="name_child_pages" />
     </p>
 
     <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
@@ -25,3 +27,7 @@
     </ng-template>
 
 </div>
+
+
+<app-list [name_parent_page]="name_child_pages"></app-list>
+

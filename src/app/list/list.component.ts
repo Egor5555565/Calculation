@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Input, Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -20,5 +20,7 @@ brews: Object;
   );
   this._http.myMethod();
   }
+
+  @Input() name_parent_page: string = "Breweries";
 
 }
