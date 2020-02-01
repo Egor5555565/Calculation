@@ -21,9 +21,17 @@ brews: Object;
   this._http.myMethod();
   }
 
+  //
   @Input() name_parent_page: string = "Breweries";
-  @Output() onChanged = new EventEmitter<boolean>();
+  @Output() onChangedTest = new EventEmitter<boolean>();
     change(increased:any) {
-        this.onChanged.emit(increased);
+        this.onChangedTest.emit(increased);
+    }
+  //
+  @Input() userNameTest:string;
+  @Output() userNameTestChange = new EventEmitter<string>();
+    onNameTestChange(model: string){
+        this.userNameTest = model;
+        this.userNameTestChange.emit(model);
     }
 }

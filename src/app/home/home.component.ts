@@ -10,6 +10,7 @@ export class HomeComponent implements OnInit {
 clickCounter: number = 0;
 name: string = '';
 name_child_pages : string = "Breweries!";
+nameTest: string = "Tom";
 
   constructor() { }
 

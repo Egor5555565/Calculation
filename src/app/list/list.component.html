@@ -5,6 +5,8 @@
 	<button (click)="change(true)">+</button>
 	<button (click)="change(false)">-</button>
 </div>
+<div>Выбранное имя: {{userNameTest}}</div>
+<input [ngModel]="userNameTest" (ngModelChange)="onNameTestChange($event)" />
 <ul *ngIf="brews">
   <li *ngFor="let brew of brews">
     <p class="name">{{ brew.name }}</p>
