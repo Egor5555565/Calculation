@@ -1,5 +1,14 @@
-<body>
+<div id="menu">
+    <span (click)="HideShowClick()">this</span>
+    <div><a href="1.html">Все байки</a></div>
+    <div><a href="2.html">Байки по автору</a></div>
+    <div><a href="3.html">Байки по теме</a></div>
+    <div><a href="4.html">Популярные разделы</a></div>
+    <div><a href="text.html">Последние байки</a></div>
+</div>
+<content>
     <h1>Welcome!</h1>
+    <span app-list="hide=false">show</span>
     <!--
         <div class="play-container" [style.background-color]="clickCounter > 4 ? 'yellow' : 'lightgray'"> 
 
@@ -32,8 +41,8 @@
         </ng-template>
 
     </div>
-
     <div>Выбранное имя: {{nameTest}}</div>
-    <app-list [name_parent_page]="name_child_pages" (onChangedTest)="onChanged($event)" [(userNameTest)]="nameTest"></app-list>
-</body>
-
+    <ng-template [ngIf]="HideShow == 1">
+        <app-list [name_parent_page]="name_child_pages" (onChangedTest)="onChanged($event)" [(userNameTest)]="nameTest"></app-list>
+    </ng-template>
+</content>

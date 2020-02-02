@@ -1,4 +1,4 @@
-import { Input, Output, EventEmitter, Component, OnInit } from '@angular/core';
+import { Input, Output, EventEmitter, Component, OnInit, ElementRef } from '@angular/core';
 import { HttpService } from '../http.service';
 
 @Component({

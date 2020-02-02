@@ -11,6 +11,7 @@ clickCounter: number = 0;
 name: string = '';
 name_child_pages : string = "Breweries!";
 nameTest: string = "Tom";
+HideShow: number = 0;
 
   constructor() { }
 
@@ -19,6 +20,15 @@ nameTest: string = "Tom";
 
   countClick() {
     this.clickCounter += 1;
+  }
+
+  HideShowClick() {
+    if(this.HideShow != 1){
+      this.HideShow  = 1;
+    }
+    else{
+      this.HideShow  = 0;
+    }
   }
 
   setClasses() {

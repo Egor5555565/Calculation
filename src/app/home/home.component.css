@@ -13,11 +13,11 @@ span {
     padding: 3em;
     border: 1px solid lightgray;
     margin-bottom: 1em;
+}
 
-    input {
+.play-container > input {
         padding: 1em;
         margin-bottom: 2em;
-    }
 }
 
 .active {
@@ -30,6 +30,29 @@ span {
     border: 4px solid black;
 }
 
-body {
+content {
     background-color: #EEE8AA;
+    float: right;
+    width: 83%;
+}
+
+#menu {
+    float: left; /* Обтекание справа */
+    width: 15%;
+    border: 2px solid #333; /* Параметры рамки вокруг */
+    padding: 5px; /* Поля вокруг текста */
+    /*Up Right Down Left */
+    margin: 0px 0px 0px 0px; /* Значения отступов */
+    background-color: pink;
+
+}
+#menu div {
+    padding: 2px; /* Поля вокруг ссылок */
+}
+#menu a { 
+    display: block; /* Отображать ссылку как блок */
+    padding: 2px; /* Поля вокруг ссылок */
+    margin: 1px; /* Отступы вокруг */
+    font-size: 0.9em; /* Размер текста */
+    text-decoration: none; /* Убираем подчеркивание текста */
 }
